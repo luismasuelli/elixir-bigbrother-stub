@@ -1,21 +1,36 @@
 # BigBrother
 
-**TODO: Add description**
+This one is just a stub of a project, and not a project itself.
+This will support:
+  - Users, authorization
+  - Websockets
+  - PostgreSQL
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `big_brother` to your list of dependencies in `mix.exs`:
+Start making your life easier.
 
-```elixir
-def deps do
-  [
-    {:big_brother, "~> 0.1.0"}
-  ]
-end
-```
+Install Docker.  
+Create your PG instance:
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/big_brother](https://hexdocs.pm/big_brother).
+    $ docker container create --name=chooseAName -p chooseAPort:5432 -it -v chooseAPath:/var/lib/postgresql/data postgres
 
+Now, hands on dirt:
+
+Copy the .env.sample file and use appropriate settings:
+
+  * host: localhost
+  * port: whatever you used as chooseAPort
+  * user & pass: postgres
+  * database: choose a name for your project's database
+
+Then you will always invoke `./emix <args>` instead of `mix <args>`.
+
+Now just run these commands:
+
+    # open a shell, and keep it running
+    $ docker container start -i chooseAName
+    
+    # open another shell
+    $ ./emix ecto.create
+    $ ./emix ecto.migrate
