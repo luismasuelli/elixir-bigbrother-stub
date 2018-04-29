@@ -15,6 +15,7 @@ defmodule BigBrother.Application do
     children = [
       # Starts a worker by calling: BigBrother.Worker.start_link(arg)
       # {BigBrother.Worker, arg},
+      BigBrother.Storage.Repositories.Main,
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

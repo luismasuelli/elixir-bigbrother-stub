@@ -2,9 +2,9 @@
 # and its dependencies with the aid of the Mix.Config module.
 use Mix.Config
 
-config :big_brother, ecto_repos: [BigBrother.Storage.Main.Repository]
+config :big_brother, ecto_repos: [BigBrother.Storage.Repositories.Main]
 
-config :big_brother, BigBrother.Storage.Main.Repository,
+config :big_brother, BigBrother.Storage.Repositories.Main,
   adapter: Ecto.Adapters.Postgres,
   database: System.get_env("BIG_BROTHER_MAIN_BASE"),
   username: System.get_env("BIG_BROTHER_MAIN_USER"),
