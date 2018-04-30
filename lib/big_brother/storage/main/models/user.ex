@@ -13,6 +13,7 @@ defmodule BigBrother.Storage.Main.Models.User do
   schema "users" do
     field :username, :string
     field :password, :string
+    field :hash_alg, :string, default: "no-password"
     field :admin, :boolean, default: false
     many_to_many :groups, Group, join_through: "user_groups", unique: true
     many_to_many :permissions, Permission, join_through: "user_permissions", unique: true

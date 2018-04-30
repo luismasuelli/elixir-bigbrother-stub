@@ -23,7 +23,8 @@ defmodule BigBrother.MixProject do
   defp deps do
     [
       {:postgrex, ">= 0.11.1"},
-      {:ecto, "~> 2.0"}
+      {:ecto, "~> 2.0"},
+      {:comeonin, "~> 4.0"}
     ]
   end
 end
