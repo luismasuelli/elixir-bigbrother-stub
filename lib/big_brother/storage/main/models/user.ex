@@ -16,6 +16,7 @@ defmodule BigBrother.Storage.Main.Models.User do
     field :admin, :boolean, default: false
     many_to_many :groups, Group, join_through: "user_groups", unique: true
     many_to_many :permissions, Permission, join_through: "user_permissions", unique: true
+    has_many :groups_permissions, Permission, through: [:groups, :permissions]
     timestamps
   end
 end
