@@ -1,4 +1,4 @@
-defmodule BigBrother.Utils do
+defmodule BigBrother.Utils.Misc do
   @moduledoc """
   Several utils functions for this app.
   """
