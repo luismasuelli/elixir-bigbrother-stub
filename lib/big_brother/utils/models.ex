@@ -4,10 +4,10 @@ defmodule BigBrother.Utils.Models do
   """
 
   def normalize_text_fields(changeset, [], _), do: changeset
-  def normalize_text_fields(changeset, [F | FS], opts) do
+  def normalize_text_fields(changeset, [field | fields], opts) do
     changeset
-    |> normalize_text_field(F, opts)
-    |> normalize_text_fields(FS, opts)
+    |> normalize_text_field(field, opts)
+    |> normalize_text_fields(fields, opts)
   end
   defp normalize_text_field(changeset, _, []) do
     changeset
