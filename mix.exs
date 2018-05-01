@@ -24,7 +24,8 @@ defmodule BigBrother.MixProject do
     [
       {:postgrex, ">= 0.11.1"},
       {:ecto, "~> 2.0"},
-      {:comeonin, "~> 4.0"}
+      {:comeonin, "~> 4.0"},
+      {:bcrypt_elixir, "~> 1.0"}
     ]
   end
 end
