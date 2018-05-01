@@ -3,7 +3,7 @@ defmodule BigBrother.Storage.Repositories.Main.Migrations.AddHashingAlgorithmFor
 
   def change do
     alter table(:users) do
-      add :hashalg, :string, size: 255, null: false, default: "no-password"
+      add :hash_alg, :string, size: 255, null: false, default: "no-password"
     end
   end
 end
