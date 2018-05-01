@@ -15,7 +15,7 @@ defmodule BigBrother.Utils.Models do
   defp normalize_text_field(changeset, field, methods) do
     value = Ecto.Changeset.get_field(changeset, field)
     changeset
-    |> Ecto.Changeset.cast(%{field => text_field_normalizations(value, methods)}, field)
+    |> Ecto.Changeset.cast(%{field => text_field_normalizations(value, methods)}, [field])
   end
   defp text_field_normalizations(value, []) do
     value
